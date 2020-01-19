@@ -30,7 +30,7 @@ export default class Table extends React.Component{
                 </thead>
                 <tbody>
                 {this.props.data.map(item => (
-                        <tr>
+                        <tr key={item[tableHeaders[0]]}>
                             {tableHeaders.map(property =>(
                                     <td>{item[property]}</td>
                                 )

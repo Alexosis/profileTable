@@ -3,8 +3,14 @@ import TableContainer from "./components/tableContainer";
 import {createStore} from "redux";
 import rootReducer from './storage/reduser';
 import {Provider} from 'react-redux';
+import {loadState, saveState} from "./middlewares/localStorage";
 
-const store = createStore(rootReducer);
+const persistedState = loadState();
+const store = createStore(rootReducer, persistedState);
+
+store.subscribe(()=>{
+    saveState(store.getState());
+});
 
 class App extends Component{
     render() {
