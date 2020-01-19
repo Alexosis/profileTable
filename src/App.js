@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import data from './profiles'
+import Table from "./table/Table";
+import sorting from "./sorting/Sort";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  state={
+    data: [],
+    sortDirection: true,
+    sortField: ''
+  };
+
+  componentDidMount() {
+    this.setState({
+      data: data,
+    })
+  }
+
+  onSort = sortField =>{
+    const clone = this.state.data.concat();
+    const sortDirection = !this.state.sortDirection;
+
+    const newOrder = sorting(clone, sortField, sortDirection);
+    this.setState({
+      data: newOrder,
+      sortDirection: sortDirection,
+      sortField: sortField
+    });
+  };
+
+  render() {
+    return (
+        <div className="App">
+          <Table
+              data={this.state.data}
+              onSort={this.onSort}
+              sortField={this.state.sortField}
+              sortDirection={this.state.sortDirection}
+          />
+        </div>
+    );
+  }
 }
 
 export default App;
