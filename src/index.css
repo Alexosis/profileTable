@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.table {
+  text-align: left;
+  font-family: "Times New Roman", sans-serif;
+}
+
+.table__header {
+  height: 30px;
+  text-align: center;
+  background-color: lightgreen;
+  min-width: 130px;
+}
+
+.table__body{
+  min-width: 130px;
+  padding-left: 10px;
+}
+
+.table__header__increase{
+  float: right;
+  padding-left: 10px;
+  margin-top: -25px;
+  margin-bottom: 5px;
+  max-width: 20px;
+  max-height: 20px;
+  transform: rotate(90deg);
+}
+
+.table__header__decrease{
+  float: right;
+  margin-top: -10px;
+  margin-bottom: 0;
+  padding-left: 10px;
+  max-width: 20px;
+  max-height: 20px;
+  transform: rotate(-90deg);
+}

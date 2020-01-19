@@ -21,8 +21,12 @@ export default class Table extends React.Component{
                 <thead>
                 <tr>
                     {tableHeaders.map(item =>(
-                            <th onClick={this.onSort.bind(null, item)}>
-                                {item} {this.props.sortField === item ? <small>{this.props.sortDirection ? 'decrease' : 'increase'}</small> : null}
+                            <th onClick={this.onSort.bind(null, item)} className='table__header'>
+                                {item} {this.props.sortField === item ? <div>{this.props.sortDirection ?
+                                <img src={require('../icons8-влево-в-квадрате-48.png')} alt='decrease'
+                                     className='table__header__decrease'/> :
+                                <img src={require('../icons8-влево-в-квадрате-48.png')} alt='increase'
+                                     className='table__header__increase'/>}</div> : null}
                             </th>
                         )
                     )}
@@ -30,9 +34,9 @@ export default class Table extends React.Component{
                 </thead>
                 <tbody>
                 {this.props.data.map(item => (
-                        <tr key={item[tableHeaders[0]]}>
+                        <tr>
                             {tableHeaders.map(property =>(
-                                    <td>{item[property]}</td>
+                                    <td className='table__body'>{item[property]}</td>
                                 )
                             )}
                         </tr>

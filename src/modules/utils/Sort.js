@@ -8,7 +8,7 @@ export default function sorting(arr, field, direction) {
         }
         if (nameA > nameB)
             return 1;
-        if (nameB > nameA)
+        if (nameB >= nameA)
             return -1;
         return 0;
     });
