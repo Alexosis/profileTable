@@ -25,6 +25,10 @@ code {
   min-width: 130px;
 }
 
+.table__header:hover{
+  background-color: green;
+}
+
 .table__body{
   min-width: 130px;
   padding-left: 10px;
