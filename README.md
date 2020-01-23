@@ -1,3 +1,12 @@
+Для имитации деятельности сервера была использованна библиотека mockserver.
+Для запуска сервера необходимо ввести команду:
+
+###mockserver -p 8080 -m ./server
+
+(В случае выбора другого порта сервера необходимо исправить соответствующую ссылку в App.js 
+componentDidMount)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
