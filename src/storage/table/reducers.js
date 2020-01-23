@@ -1,8 +1,7 @@
 import {CHOOSE_DIRECTION_OF_SORTING, CHOOSE_FIELD_OF_SORTING, DATA_ORDER} from "./actions";
-import data from '../../public/profiles'
 
 const defaultState = {
-    data: data,
+    data: [],
     sortDirection: true,
     sortField: ''
 };
